@@ -1,0 +1,123 @@
+/* Navbar.module.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  color: #333;
+  padding: 2rem;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+  font-size: 2.5rem;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+}
+
+.navLinks li {
+  margin-right: 20px;
+  transition: 0.2s linear;
+}
+
+.navLinks li a {
+  color: #333;
+  text-decoration: none;
+}
+.navLinks li:hover{
+  transform: translateY(-3px);
+}
+
+.mobileToggle {
+  display: none;
+  cursor: pointer;
+}
+
+.mobileToggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 800px) {
+  .mobileToggle {
+    display: block; /* Show toggle button */
+  }
+
+  .navLinks {
+    display: none; /* Hide desktop nav links */
+  }
+  .logo a {
+    padding-left: 8rem;
+  }
+}
+
+/* Navbar.module.css */
+.mobileMenu {
+  display: none;
+  
+}
+
+@media (max-width: 800px) {
+  .navLinks {
+    display: none; /* Hide desktop nav links */ 
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    height: 93vh;
+    width: 50vw;
+    background: white;
+    flex-direction: column;
+    transform: translateX(60%);
+    transition: 0.5s ease-in;
+    gap: 2.6rem;
+    padding-top: 2rem;
+    padding-left: 13.5rem;
+    height: 92vh; /* Adjusted to match remaining viewport height */
+    width: 250vw;
+    z-index: 9999; /* Ensure the menu appears above other content */
+    padding-top: 6rem;
+    font-weight: bold;
+  }
+}
+
+
+/* Navbar.module.css */
+@media (min-width: 800px) {
+  .navLinks {
+    display: flex; /* Show desktop nav links */
+  }
+
+  .mobileMenu {
+    display: none; /* Hide mobile menu */
+  }
+
+  .mobileToggle {
+    display: none; /* Hide mobile toggle button */
+  }
+  .logo a {
+    padding-left: 10rem;
+  }
+  .navLinks{
+    gap: 1.5rem;
+    padding-left: 35rem;
+    font-weight: bold;
+  }
+}
+
+
+
+

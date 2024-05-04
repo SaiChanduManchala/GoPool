@@ -8,11 +8,13 @@ import Feedback from "./Components/Feedback";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Welcome from "./Components/Welcome";
+import React from 'react';
 
 
 function App() {
   return (
     <div className="App">
+      
       <Home />
       <Welcome />
       <Work />

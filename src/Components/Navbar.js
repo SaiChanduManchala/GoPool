@@ -1,24 +1,54 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import styles from './Navbar.module.css';
 
-const Navbar = () => {
-  
+function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <div class="navbar">
-          <div class="nav-logo">
-            <label class="nav-logo-text" for="toogle"><h1>GoPool</h1></label>
-          </div>
-          <input type="checkbox" id="toogle" />
-          <div class="navlinks">
-            <a href="#home" class="navlink">Home</a>
-            <a href="#Appp" class="navlink">App</a>
-            <a href="#About" class="navlink">About</a>
-            <a href="#Team" class="navlink">Team</a>
-            <a href="#Feedback" class="navlink">Feedback</a>
-            <a href="#Contact" class="navlink">Contact</a>
-          </div>
-        </div>
+    <nav className={styles.navbar}>
+      {/* Logo */}
+      <div className={styles.logo}>
+        <a href="#">GoPool</a>
+      </div>
+
+      {/* Desktop Navbar */}
+      <ul className={`${styles.navLinks} ${!isMobileMenuOpen ? styles.desktopMenu : ''}`}>
+        <li><a href="#home" className="navlink" onClick={closeMobileMenu}>Home</a></li>
+        <li><a href="#Appp" className="navlink" onClick={closeMobileMenu}>App</a></li>
+        <li><a href="#About" className="navlink" onClick={closeMobileMenu}>About</a></li>
+        <li><a href="#Team" className="navlink" onClick={closeMobileMenu}>Team</a></li>
+        <li><a href="#Feedback" className="navlink" onClick={closeMobileMenu}>Feedback</a></li>
+        <li><a href="#Contact" className="navlink" onClick={closeMobileMenu}>Contact</a></li>
+      </ul>
+
+      {/* Mobile Toggle Button */}
+      <div className={styles.mobileToggle} onClick={toggleMobileMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Mobile Navbar */}
+      {isMobileMenuOpen && (
+        <ul className={`${styles.navLinks} ${styles.mobileMenu}`}>
+          <li><a href="#home" className="navlink" onClick={closeMobileMenu}>Home</a></li>
+          <li><a href="#Appp" className="navlink" onClick={closeMobileMenu}>App</a></li>
+          <li><a href="#About" className="navlink" onClick={closeMobileMenu}>About</a></li>
+          <li><a href="#Team" className="navlink" onClick={closeMobileMenu}>Team</a></li>
+          <li><a href="#Feedback" className="navlink" onClick={closeMobileMenu}>Feedback</a></li>
+          <li><a href="#Contact" className="navlink" onClick={closeMobileMenu}>Contact</a></li>
+        </ul>
+      )}
+    </nav>
   );
-};
+}
 
 export default Navbar;
