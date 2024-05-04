@@ -819,7 +819,7 @@ html {
 /* ipad */
 @media only screen and (max-width: 800px) {
   .home {
-    width: 75%;
+    width: 100%;
   }
   .navlinks {
     flex-basis: 65%;
