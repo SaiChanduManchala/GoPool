@@ -71,27 +71,7 @@
     display: none; /* Hide desktop nav links */ 
   }
 
-  .mobileMenu {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 10vh;
-    right: 0;
-    height: 93vh;
-    width: 50vw;
-    background: white;
-    flex-direction: column;
-    transform: translateX(60%);
-    transition: 0.5s ease-in;
-    gap: 2.6rem;
-    padding-top: 2rem;
-    padding-left: 13.5rem;
-    height: 92vh; /* Adjusted to match remaining viewport height */
-    width: 250vw;
-    z-index: 9999; /* Ensure the menu appears above other content */
-    padding-top: 6rem;
-    font-weight: bold;
-  }
+  
 }
 
 

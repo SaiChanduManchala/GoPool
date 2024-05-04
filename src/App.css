@@ -780,39 +780,6 @@ html {
 
 /*____________________________________________ Navbar _________________________________________*/
 
-@media screen and (max-width: 768px) {
-  .nav__toggler {
-    display: block;
-    cursor: pointer;
-  }
-  .nav__menu {
-    position: fixed;
-    top: 7vh;
-    right: 0;
-    height: 93vh;
-    width: 50vw;
-    background: rgb(190, 221, 253);
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: 0.5s ease-in;
-  }
-}
-/* Active Class */
-.nav__active {
-  transform: translateX(0%);
-}
-
-/* Toggle Icon Animation */
-
-.toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 5px);
-}
-.toggle .line2 {
-  opacity: 0;
-}
-.toggle .line3 {
-  transform: rotate(45deg) translate(-5px, -5px);
-}
 
 /* ___________________________________________ Home ___________________________________________  */
 
@@ -878,7 +845,7 @@ html {
 @media only screen and (max-width: 800px) {
   .welcome {
     min-height: 90vh;
-    width: 95%;
+    width: 100%;
     justify-content: space-around;
   }
   .wb-text {
@@ -943,14 +910,14 @@ html {
   }
 
   .Appp-card {
-    width: 93vw;
+    width: 100vw;
   }
 }
 /* ___________________________________________ About ___________________________________________  */
 /* ipad */
 @media only screen and (max-width: 800px) {
   .About{
-    width: 90%;
+    width: 100%;
     row-gap: 3rem;
   }
   .pt {
@@ -968,6 +935,9 @@ html {
     width: 75vw;
     border: none;
     border-bottom: 2px solid var(--dark-shade-gray);
+  }
+  .About{
+    width: 100%;
   }
 }
 
