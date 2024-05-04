@@ -105,7 +105,7 @@ html {
 }
 
 .home-container{
-  width: 90vw;
+  width: 100vw;
 }
 .home-banner-container {
   position: relative;
@@ -819,7 +819,7 @@ html {
 /* ipad */
 @media only screen and (max-width: 800px) {
   .home {
-    width: 75%;
+    width: 100%;
   }
   .navlinks {
     flex-basis: 65%;
