@@ -20,6 +20,29 @@ body {
   background-color: white;
 }
 
+:root {
+  /* Font Family  */
+  --font-family: "Poppins", sans-serif;
+  --logo-font-family: "Volkhov", serif;
+
+  /* Colors  */
+  --gray-text: #8b888899;
+  --light-shade-gray: #efefef;
+  --dark-shade-gray: #e4e4e4;
+  --yellow: #ffe26d;
+  --purple: #61497b;
+  --dark-purple: #3d2a52;
+}
+
+html {
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 /*_____________________________________________________Navbar________________________________________________*/
 
 
@@ -50,6 +73,7 @@ body {
   flex-basis: 36%;
   display: flex;
   justify-content: space-between;
+  padding-right: 80px;
 }
 
 .navlink {
@@ -71,13 +95,6 @@ body {
 .navlink:hover {
   transform: translateY(-3px);
 }
-
-
-
-
-
-
-
 
 
 
@@ -760,32 +777,100 @@ body {
 /* iphonex */
 @media only screen and (max-width: 500px) {
 }
+
+/*____________________________________________ Navbar _________________________________________*/
+
+@media screen and (max-width: 768px) {
+  .nav__toggler {
+    display: block;
+    cursor: pointer;
+  }
+  .nav__menu {
+    position: fixed;
+    top: 7vh;
+    right: 0;
+    height: 93vh;
+    width: 50vw;
+    background: rgb(190, 221, 253);
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+  }
+}
+/* Active Class */
+.nav__active {
+  transform: translateX(0%);
+}
+
+/* Toggle Icon Animation */
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
 /* ___________________________________________ Home ___________________________________________  */
 
 /* ipad */
 @media only screen and (max-width: 800px) {
-  #home_section {
-    row-gap: 3rem;
+  .home {
+    width: 75%;
+  }
+  .navlinks {
+    flex-basis: 65%;
   }
 
-  .Appstore{
-    flex-direction: column;
-    row-gap: 3rem;
-    padding-bottom: 3rem;
+  .home-text-section {
+    min-height: 30vh;
+    width: 85%;
   }
 
-  .home-banner-container {
-    width: 60vw;
+  .primary-heading {
+    font-size: 2.3rem;
+  }
+
+  .primary-text {
+    width: 90%;
   }
 }
 /* iphonex */
 @media only screen and (max-width: 500px) {
-  #home_section {
-    padding-top: 3rem;
+  .navbar {
+    flex-direction: column;
+  }
+  .navlinks {
+    display: none;
   }
 
-  .home-banner-container {
-    width: 93vw;
+  #toogle:checked + .navlinks {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-text-section {
+    min-height: 40vh;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .primary-heading {
+    line-height: 2rem;
+    font-size: 1.2rem;
+  }
+  .primary-text {
+    font-size: 0.8rem;
+  }
+  .Appstore{
+    padding-left: 9rem;
+    padding-top: 1rem;
+  }
+  .nav-logo{
+    padding-top: 3rem;
+    padding-right: 1rem;
   }
 }
 /* ___________________________________________ Welcome ___________________________________________  */
@@ -829,6 +914,9 @@ body {
   .welcome-cards {
     flex-direction: column;
     row-gap: 3rem;
+  }
+  .wb-text{
+    font-size: 1rem;
   }
 }
 /* ___________________________________________ Application ___________________________________________  */
@@ -987,6 +1075,136 @@ body {
 
 .hide {
   display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+  .navbar-links-container a {
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+  .primary-button {
+    font-size: 1rem;
+  }
+  .home-bannerImage-container {
+    max-width: 600px;
+  }
+}
+@media (max-width: 800px) {
+  .nav-logo {
+    max-width: 140px;
+  }
+  .navbar-links-container {
+    display: none;
+  }
+  .navbar-menu-container {
+    display: flex;
+  }
+  .home-bannerImage-container {
+    max-width: 450px;
+  }
+  .home-banner-container,
+  .about-section-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-section-container {
+    flex-direction: column;
+  }
+  .home-image-section,
+  .about-section-image-container {
+    width: 100%;
+    max-width: 400px;
+  }
+  .primary-heading {
+    text-align: center;
+    max-width: 90%;
+  }
+  .primary-text {
+    text-align: center;
+    max-width: 80%;
+  }
+  .home-text-section,
+  .about-section-text-container {
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+  }
+  .secondary-button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+  }
+  .about-section-container {
+    margin-top: 5rem !important;
+  }
+  .about-buttons-container {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .primary-subheading {
+    text-align: center;
+  }
+  .watch-video-button {
+    margin-left: 0rem !important;
+    margin-top: 1rem;
+    font-size: 1rem !important;
+  }
+  .watch-video-button svg {
+    margin-right: 0.5rem !important;
+  }
+  .about-section-image-container {
+    margin-right: 0rem !important;
+  }
+  .work-section-wrapper {
+    margin-top: 5rem !important;
+  }
+  .work-section-bottom {
+    margin-top: 1rem !important;
+  }
+  .contact-form-container {
+    padding: 0.5rem !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem !important;
+  }
+  .contact-form-container input {
+    font-size: 1rem !important;
+    max-width: 100%;
+    padding: 0.5rem 1rem !important;
+    margin-bottom: 0.8rem !important;
+    text-align: center;
+  }
+  .footer-wrapper {
+    flex-direction: column;
+  }
+  .footer-section-two {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .footer-section-columns {
+    margin: 1rem 0rem;
+  }
+  .App {
+    max-width: 95vw;
+  }
+}
+@media (max-width: 600px) {
+  .home-bannerImage-container,
+  .about-background-image-container {
+    display: none;
+  }
 }
 
 
